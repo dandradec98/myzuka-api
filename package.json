@@ -24,6 +24,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
+    "get-json": "^1.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "utf8": "^3.0.0"
