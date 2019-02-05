@@ -1,0 +1,31 @@
+{
+  "name": "myzuka-api",
+  "version": "0.0.1",
+  "description": "API for MYZUKA webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandradec98/myzuka-api.git"
+  },
+  "keywords": [
+    "myzuka",
+    "myzuka-api",
+    "music-api"
+  ],
+  "author": "#dandradec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dandradec98/myzuka-api/issues"
+  },
+  "homepage": "https://github.com/dandradec98/myzuka-api#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "utf8": "^3.0.0"
+  }
+}
