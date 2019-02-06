@@ -10,6 +10,7 @@ const port = process.env.PORT || 8080;
 /*Starting server*/
 const app = express();
 
+app.use(cors());
 app.listen(port);
 
 /*API and Webpage data*/
@@ -251,8 +252,6 @@ app.get("/Artist/:id/:name/Albums", (req, res) => {
             console.log(err);
         });
 });
-
-app.use(cors());
 
 console.log(`Myzuka API running on port ${port}`);
 
