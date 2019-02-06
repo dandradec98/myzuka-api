@@ -81,6 +81,7 @@ app.get("/Song/:id/:name", (req, res) => {
                 .text();
 
             const songUrl = myzuka + $(`a[itemprop = 'audio']`).attr("href");
+            const playUrl = songUrl.replace('Download', 'Play');
 
             const jsonObj = {
                 album: album,
@@ -88,6 +89,7 @@ app.get("/Song/:id/:name", (req, res) => {
                 genre: genre,
                 name: name,
                 picUrl: picUrl,
+                playUrl: playUrl,
                 songUrl: songUrl
             };
 
@@ -227,8 +229,8 @@ app.get("/Artist/:id/:name/Albums", (req, res) => {
                 .forEach((e) => {
                     albumTitle.push(e.data);
                 })
-    
-            albumInfo.attr('href', (i,value) => {
+
+            albumInfo.attr('href', (i, value) => {
                 originAlbumUrl.push(myzuka + value);
                 apiAlbumUrl.push(api + value);
 
@@ -247,6 +249,14 @@ app.get("/Artist/:id/:name/Albums", (req, res) => {
         .catch(function (err) {
             console.log(err);
         });
+});
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
 });
 
 console.log(`Myzuka API running on port ${port}`);
