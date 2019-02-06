@@ -14,7 +14,7 @@ app.listen(port);
 /*API and Webpage data*/
 const myzuka = "https://myzuka.club";
 
-const api = 'https://api-myzuka.herokuapp.com/';
+const api = 'https://api-myzuka.herokuapp.com';
 
 app.get("/", (req, res, html) => {
     res.send("WELCOME TO MYZUKA API");
